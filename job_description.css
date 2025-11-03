@@ -1,0 +1,309 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: url("./images/refinery.jpg");
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.container > * {
+    border: 2px solid #000;
+}
+
+header {
+    /* background-color: #0a4b8c; */
+    background:linear-gradient(90deg, #1c69c2, #7cb3e7);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 10px;
+}
+
+header .header-left{
+    flex-basis: 30%;
+}
+header .header-left img{
+    width: 80px;
+    height: 70px;
+}
+
+header .header-right{
+    flex-basis: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+header .header-right > *{
+    text-align: center;
+}
+header .header-right > p{
+    text-align: end;
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+/* LOGO */
+header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.author {
+    font-size: 0.8rem;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.main {
+    display: flex;
+    background-color: #dce9f9;
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(#1c69c2, #7cb3e7);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    background-color: #0a4b8c;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #073a70;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #e5f0ff;
+}
+
+.title {
+    background-color: #4f9ee7;
+    color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #888;
+    text-align: center;
+}
+.text-block {
+    background-color: white;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    gap: 15px;
+}
+
+section h2{
+    margin: 10px 0;
+    text-align: center;
+}
+
+.text-block .image-block{
+    flex-basis: 25%;
+}
+.text-block .post-block{
+    flex-basis: 75%;
+}
+.text-block .image-block img {
+  width: 100%;
+  height: 100%;
+}
+
+.text-block .post-block h3{
+    margin: 10px 0;
+    text-align: center;
+}
+.text-block .post-block p{
+    margin: 10px 0 0 0;
+}
+
+.text-block ul {
+    margin: 10px 0 0 20px;
+}
+/* Dept list: use CSS Grid for consistent rows/columns */
+.dept-list ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* standard items */
+.dept-list ul li {
+  padding: 10px;
+  text-align: center;
+  background-color: #67a6e6;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* link styling inside each item */
+.dept-list ul li a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+      /* small helper styles for active states (merge into your CSS if needed) */
+      /* top-level dept-list active li */
+      .post-block .dept-list li.active {
+        background: #0278ee;
+        color: #fff;
+      }
+      .post-block .dept-list li a {
+        display: block;
+        padding: 8px 10px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* hide all department blocks by default; JS will show the correct one */
+      .desc-block {
+        display: none; /* hidden until JS shows the requested department */
+      }
+
+      /* visible department (we remove inline style or set display via JS) */
+      .desc-block.visible {
+        display: flex; /* keep your original flex layout */
+        gap: 18px;
+      }
+
+      /* keep desc-details hidden until activated by inner logic */
+      .desc-details {
+        display: none;
+      }
+      .desc-details.active {
+        display: block;
+      }
+
+/* Make the last li span the entire row and be adjacent to the above row */
+.dept-list ul li:last-child {
+  grid-column: 1 / -1;   /* span from first column to last column */
+}
+
+/* Responsive: reduce columns on narrow screens */
+@media (max-width: 900px) {
+  .dept-list ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 680px) {
+  .dept-list ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 420px) {
+  .dept-list ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.desc-list ul{
+    padding: 0;
+    border: 1px solid #3baae3;
+    background: #deedf7;
+    border-radius: 8px;    
+}
+.desc-list li{
+    list-style-type: none;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 8px;
+}
+/* style for the active list item (the li that should look selected) */
+.desc-list li.active {
+  background: #67a6e6;
+  color: #fff;
+}
+
+/* keep the anchor filling the li so the whole row is clickable */
+.desc-list li a {
+  display: block;
+  color: inherit;            /* inherits color from li (so white when li.active) */
+  text-decoration: none;
+  padding: 5px;         /* spacing inside li */
+}
+
+/* optional: ensure non-active li anchors have readable color */
+.desc-list li:not(.active) a {
+  color: #033e67;
+}
+
+.desc-list a.active {
+  background: #99c9f5;
+  color: #fff;
+}
+
+.desc-block{
+    display: flex;
+    gap: 15px;
+}
+.desc-block .desc-list{
+    flex: 0 0 40%;
+}
+/* ensure details are hidden by default */
+.desc-block .desc-details {
+  display: none;
+  flex: 0 0 60%;
+}
+
+/* visible state */
+.desc-block .desc-details.active {
+  display: block;
+}
+.desc-details li{
+    list-style-type: disc;
+    font-size: 16px;
+    line-height: 1.3rem;
+    margin: 10px 0;
+}
+.desc-details p{
+    margin: 10px 0;
+    font-size: 17px;
+    text-align: center;
+}
+.content .download-btn {
+  background-color: #0066cc;
+  color: white;
+  margin: 50px 0;
+  padding: 10px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+.content .download-btn:hover {
+  background-color: #0056b3;
+}

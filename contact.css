@@ -1,0 +1,158 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: url("./images/refinery.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #000;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.container > * {
+    border: 2px solid #000;
+}
+
+header {
+    /* background-color: #0a4b8c; */
+    background:linear-gradient(90deg, #1c69c2, #7cb3e7);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 10px;
+}
+
+header .header-left{
+    flex-basis: 30%;
+}
+header .header-left img{
+    width: 80px;
+    height: 70px;
+}
+
+header .header-right{
+    flex-basis: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+header .header-right > *{
+    text-align: center;
+}
+header .header-right > p{
+    text-align: end;
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+/* LOGO */
+header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.author {
+    font-size: 0.8rem;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.main {
+    display: flex;
+    background-color: #dce9f9;
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(#1c69c2, #7cb3e7);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    background-color: #0a4b8c;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #073a70;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #e5f0ff;
+}
+
+.title {
+    background-color: #4f9ee7;
+    color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #888;
+    text-align: center;
+}
+
+.contact-block {
+    background-color: white;
+    border: 1px solid #ccc;
+    margin: 30px  0;
+    padding: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-block p, .contact-block a {
+    font-size: 16px;
+}
+
+.contact-block a {
+    display: block;
+}
+
+.contact-block .image-block{
+    flex-basis: 25%;
+}
+.contact-block .block{
+    flex-basis: 75%;
+}
+.contact-block .image-block img {
+  width: 100%;
+  height: auto;
+}
+
+.contact-block .block h3{
+    margin: 0;
+    border: 2px solid #000
+}
+.contact-block .block p{
+    margin: 10px 0 0 0;
+}
+
+.contact-block ul {
+    margin: 10px 0 0 20px;
+}
